@@ -15,7 +15,9 @@ DFLAGS			=	$(WFLAGS) -fsanitize=address -g
 INCLUDES		=	-I $(DIR_INC)
 
 SRC_INCLUDE		=	computorV1.h
-SRC_FIlE		=	main.c
+SRC_FIlE		=	main.c \
+					init.c \
+					read.c \
 
 FLAGS			=	$(WFLAGS)
 INC				=	$(addprefix $(DIR_INC),$(SRC_INCLUDE))
