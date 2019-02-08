@@ -23,18 +23,23 @@ int		main(int argc, char **argv)
 
 	//verification entrer
     if (!initialization(argv[1], &computor, &equation, &verbos))
+	{
+		//
+		printf("ERROR1\n");
 		exit(0);
-	while(skip_space(argv[1], &computor))
+	}
+	while (skip_space(argv[1], &computor) != -1)
 	{
 		data = analyze(argv[1], &computor, &verbos);
-		printf("[%f - %c]\n", data.number, data.symbol);
-		//1 = stocker chiffre
-		//2 = stokcker igne
+		printf("[%s]-", data.symbol);
+		printf ("[%f]\n", data.number);
 	}
     //si pas erreur de verbos
         //calcul puis imprim
     //else
         //imprime le verbos
+
+	printf("\n[%s]\n", verbos.argv);
 	clean(&computor, &equation, &verbos);
 	while(1)
 		;

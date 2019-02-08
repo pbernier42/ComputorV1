@@ -18,10 +18,11 @@ bool	initialization(
 	//if (!(equa = (t_equation *)malloc(sizeof(t_equation))))
 	//	return (0);
 	equa->number = 0;
-	equa->symbol = '\0';
+	equa->symbol = "\0\0";
+	//equa->next = ??
 	comp->i = 0;
 	//comp->start = equa;
-	if (initialization_verbos(argv, verb))
+	if (!initialization_verbos(argv, verb))
 		return (0);
 	return (1);
 }
@@ -32,6 +33,7 @@ bool	initialization_verbos(char *argv, t_verbos *verb)
 	size_t	len_argv;
 
 	i = 0;
+	len_argv = 0;
 	verb->number_error = 0;
 	verb->i = 0;
 	while (argv && argv[i])
